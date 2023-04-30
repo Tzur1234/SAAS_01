@@ -1,0 +1,11 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+
+DATABASE_URL=postgresql://doadmin:AVNS_zZL-taCXj-ZQHnryGhK@db-postgresql-fra1-26496-do-user-13657417-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require
+
+
+POSTGRES_HOST=db-postgresql-fra1-26496-do-user-13657417-0.b.db.ondigitalocean.com
+POSTGRES_PORT=25060
+POSTGRES_DB=defaultdb
+POSTGRES_USER=doadmin
+POSTGRES_PASSWORD=AVNS_zZL-taCXj-ZQHnryGhK
