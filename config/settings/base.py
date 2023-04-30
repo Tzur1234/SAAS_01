@@ -149,6 +149,11 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+AWS_ACCESS_KEY_ID=env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=env('AWS_SECRET_ACCESS_KEY')
+# CDN MEDIA
+# https://saas01.fra1.digitaloceanspaces.com
+
 # MEDIA
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#media-root
