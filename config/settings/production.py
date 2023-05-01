@@ -27,6 +27,10 @@ CACHES = {
     }
 }
 
+
+
+
+
 # SECURITY
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-proxy-ssl-header
@@ -53,6 +57,23 @@ SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", def
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # MEDIA
 # ------------------------------------------------------------------------------
+
+# AWS
+AWS_ACCESS_KEY_ID='DO00HL26LYURVDXYDV28'
+AWS_SECRET_ACCESS_KEY='NBOAH4uSoeNSgdFyGzGaFPg3bvyVVM5jYtc5T4sVNeY'
+AWS_S3_ENDPOINT_URL='https://saas01.fra1.digitaloceanspaces.com'
+AWS_STORAGE_BUCKET_NAME='SAAS01'
+AWS_S3_OBJECT_PARAMETERS = {
+     "CacheControl": "max-age=86400",
+}
+AWS_S3_REGION_NAME = env("DJANGO_AWS_S3_REGION_NAME", default=None)
+
+STATICFILES_STORAGE = "saas.utils.storages.StaticRootS3Boto3Storage"
+DEFAULT_FILE_STORAGE = "saas.utils.storages.MediaRootS3Boto3Storage"
+
+INSTALLED_APPS += ["storages"] # noqa: F405
+
+
 
 # EMAIL
 # ------------------------------------------------------------------------------

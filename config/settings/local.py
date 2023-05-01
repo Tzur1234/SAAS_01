@@ -59,5 +59,18 @@ if env("USE_DOCKER") == "yes":
 # https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration
 INSTALLED_APPS += ["django_extensions"]  # noqa: F405
 
-# Your stuff...
-# ------------------------------------------------------------------------------
+# AWS
+AWS_ACCESS_KEY_ID='DO00RN98BJPQVTQYMZUR'
+AWS_SECRET_ACCESS_KEY='HVkxX8iD66bRG5Ds1BEm1Ibb0c9WUfx1bVfVtgkDixE'
+AWS_S3_ENDPOINT_URL='https://saas1loc.fra1.digitaloceanspaces.com'
+AWS_STORAGE_BUCKET_NAME='SAAS01LOC'
+AWS_S3_OBJECT_PARAMETERS = {
+     "CacheControl": "max-age=86400",
+}
+AWS_S3_REGION_NAME = env("DJANGO_AWS_S3_REGION_NAME", default=None)
+
+STATICFILES_STORAGE = "saas.utils.storages.StaticRootS3Boto3Storage"
+DEFAULT_FILE_STORAGE = "saas.utils.storages.MediaRootS3Boto3Storage"
+
+
+INSTALLED_APPS += ["storages"] # noqa: F405
