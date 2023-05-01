@@ -69,8 +69,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_S3_REGION_NAME = env("DJANGO_AWS_S3_REGION_NAME", default=None)
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_STORAGE = "saas.utils.storages.StaticRootS3Boto3Storage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "saas.utils.storages.StaticRootS3Boto3Storage"
 DEFAULT_FILE_STORAGE = "saas.utils.storages.MediaRootS3Boto3Storage"
 
 
