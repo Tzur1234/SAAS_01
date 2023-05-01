@@ -43,7 +43,7 @@ MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa: F405
 # https://django-debug-toolbar.readthedocs.io/en/latest/configuration.html#debug-toolbar-config
 DEBUG_TOOLBAR_CONFIG = {
     # "DISABLE_PANELS": ["debug_toolbar.panels.redirects.RedirectsPanel"],
-    "DISABLE_PANELS": [],
+    # "DISABLE_PANELS": [],
     "SHOW_TEMPLATE_CONTEXT": True,
 }
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#internal-ips
@@ -69,6 +69,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_S3_REGION_NAME = env("DJANGO_AWS_S3_REGION_NAME", default=None)
 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_STORAGE = "saas.utils.storages.StaticRootS3Boto3Storage"
 DEFAULT_FILE_STORAGE = "saas.utils.storages.MediaRootS3Boto3Storage"
 
