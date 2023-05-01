@@ -59,10 +59,11 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # ------------------------------------------------------------------------------
 
 # AWS
-AWS_ACCESS_KEY_ID='DO00HL26LYURVDXYDV28'
-AWS_SECRET_ACCESS_KEY='NBOAH4uSoeNSgdFyGzGaFPg3bvyVVM5jYtc5T4sVNeY'
+AWS_ACCESS_KEY_ID=env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME=env('AWS_STORAGE_BUCKET_NAME')
+
 AWS_S3_ENDPOINT_URL='https://saas01.fra1.digitaloceanspaces.com'
-AWS_STORAGE_BUCKET_NAME='SAAS01'
 AWS_S3_OBJECT_PARAMETERS = {
      "CacheControl": "max-age=86400",
 }
