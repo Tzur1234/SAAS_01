@@ -1,0 +1,4 @@
+{
+  "html.format.wrapLineLength": 3,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
